@@ -2,13 +2,23 @@ CHAPTER 1 (v0.04)
 Stem/Leaf plots
 	require aplpack
 		replace with something that doesn't use tcltk later?
+	TODO
+		simplify stem.leaf?
 
 CHAPTER 2 (v0.08)
 	Indices of central tendencies, including trimmed mean, are in R-base.
 	A "stem-mode" function is provided by r4arch.stemmode().
 	TODO:
 		make r4arch.stemmode() recognize minor modes
+		update trimmed mean to use rounding like Drennan
 CHAPTER 3 (v0.12)
+	r4arch.range <- subtract out R's range to give commonly understood range
+	r4arch.quartiles <- follow Drennan's explanation of quartiles more closely
+	r4arch.iqr <- use values from r4arch.quartiles for IQR calculation
+	Standard Deviation is provided for in R-base
+	r4arch.winsor <- use simple Winsorization after Drennan (see also Matrix example in help intro)
+	r4arch.winsor.sd <- winsorized std dev after Drennan.  Make sure to use winsorized variance, ie var(r4arch.winsor)
+	r4arch.indexpair <- calculate one or all of the index pairs, ie median & IQR, mean & std dev, trimmed mean & trimmed std dev, using r4arch functions where necessary
 CHAPTER 4 (v0.16)
 CHAPTER 5 (v0.20)
 CHAPTER 6 (v0.24)
