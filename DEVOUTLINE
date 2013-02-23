@@ -1,1 +1,39 @@
-put developement outline by chapter here, define commands and what they should do
+CHAPTER 1 (v0.04)
+Stem/Leaf plots
+	require aplpack
+		replace with something that doesn't use tcltk later?
+
+CHAPTER 2 (v0.08)
+	Indices of central tendencies, including trimmed mean, are in R-base.
+	A "stem-mode" function is provided by r4arch.stemmode().
+	TODO:
+		make r4arch.stemmode() recognize minor modes
+CHAPTER 3 (v0.12)
+CHAPTER 4 (v0.16)
+CHAPTER 5 (v0.20)
+CHAPTER 6 (v0.24)
+CHAPTER 7 (v0.28)
+CHAPTER 8 (v0.32)
+CHAPTER 9 (v0.36)
+CHAPTER 10 (v0.40)
+CHAPTER 11 (v0.44)
+CHAPTER 12 (v0.48)
+CHAPTER 13 (v0.52)
+CHAPTER 14 (v0.56)
+CHAPTER 15 (v0.60)
+CHAPTER 16 (v0.64)
+CHAPTER 17 (v0.68)
+CHAPTER 18 (v0.72)
+CHAPTER 19 (v0.76)
+CHAPTER 20 (v0.80)
+CHAPTER 21 (v0.84)
+CHAPTER 22 (v0.88)
+CHAPTER 23 (v0.92)
+CHAPTER 24 (v0.96)
+CHAPTER 25 (v1.0 alpha RC0)
+implements everything, but is not packaged.
+v1.0 alpha RC1...?
+packaged testing versions, fully functional
+v1.0
+fully functional, packaged, and tested
+
