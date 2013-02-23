@@ -1,0 +1,7 @@
+R4ARCH - R for Archaeologists
+
+This is an R (www.r-project) project integrated with Statistics for Archaeologists (2nd Ed.), designed to make the methods described in the book easier to implement in R.
+
+Development Path
+Initially, an .R file, or series of .R files will be created to implement functions not otherwise available in R (ie, Drennen's version of winsorization, or the trimmed standard deviation).  Ultimately, I intend to make this available as an R package, ideally through CRAN (cran.r-project.org), to encourage the use of R within the archaeological community.
+The final stage in main development will be the creation of a GUI, to assist those less technologically savvy archaeologists in using this tool set.
