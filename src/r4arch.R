@@ -46,8 +46,11 @@ r4arch.winsor <- function(x,trim) {
 	print(winsor.x)
 }
 
-r4arch.winsor.sd <- function() {
-	#code
+r4arch.winsor.sd <- function(x,trim) {
+	winsor.trim <- round(length(x)*trim)
+	winsor.var <- var(r4arch.winsor(x,trim))
+	winsor.sd <- sqrt((length(x)-1)*winsor.var/((length(x)-(2*winsor.trim))-1))
+	print(winsor.sd)
 }
 
 r4arch.indexpair <- function() {
