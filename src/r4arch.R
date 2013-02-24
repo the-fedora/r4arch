@@ -1,6 +1,6 @@
 ## R for Archaeologists Function Library v0.08 alpha (Chapter 2)
 
-R4ARCHVER <- data.frame(VER=0.12,ALPHA=FALSE,RC=0) #RC=FALSE reserved for release
+R4ARCHVER <- data.frame(VER=0.16,ALPHA=TRUE,RC=0) #RC=FALSE reserved for release
 
 ## Copyright (c) 2013 Evan Sternberg
 ## Released under the ISC license:
@@ -90,4 +90,23 @@ r4arch.indexpair <- function(x,trim,pair) {
 	if(pair=="all") { indexpair.all(x,trim) }
 	else {cat("Error:  Invalid pair designator\n")}
 	}}}
+}
+
+r4arch.boxplot <- function(...) {
+	boxplot(...,range=1.5)
+	boxplot(...,range=3,add=1)
+	cat("Secondary dashed-line and bar denote median come outliers\nif such exist.  Unaltered open dots are far outliers.\n")
+}
+
+r4arch.boxplot.std <- function(...,rem) {
+	if(missing(rem)) { cat("rem must be either level or spread\nrem=level removes level from boxplot\nrem=spread removes level and spread\n") }
+	remlevel <- function() {
+		remdata <- ...-median(...)
+	}
+	remspread <- function() {}
+	if(rem="level") { remlevel }
+	else {
+		if(rem="spread") { remspread }
+	}
+	r4arch.boxplot(remdata)
 }
