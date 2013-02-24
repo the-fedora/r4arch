@@ -1,6 +1,6 @@
 ## R for Archaeologists Function Library v0.08 alpha (Chapter 2)
 
-R4ARCHVER <- data.frame(VER=0.12,ALPHA=TRUE,RC=0) #RC=FALSE reserved for release
+R4ARCHVER <- data.frame(VER=0.12,ALPHA=FALSE,RC=0) #RC=FALSE reserved for release
 
 ## Copyright (c) 2013 Evan Sternberg
 ## Released under the ISC license:
@@ -43,16 +43,51 @@ r4arch.winsor <- function(x,trim) {
 	for (i in 0:winsor.trim) {
 		winsor.x[c(1+i,length(winsor.x)-i)] <- winsor.x[winsor.replacewith.i]
 	}
-	print(winsor.x)
+	winsor.x
 }
 
 r4arch.winsor.sd <- function(x,trim) {
 	winsor.trim <- round(length(x)*trim)
 	winsor.var <- var(r4arch.winsor(x,trim))
 	winsor.sd <- sqrt((length(x)-1)*winsor.var/((length(x)-(2*winsor.trim))-1))
-	print(winsor.sd)
+	winsor.sd
 }
 
-r4arch.indexpair <- function() {
-	#code
+r4arch.indexpair <- function(x,trim,pair) {
+	usage <- function() {
+		cat("pair must be one of four options:\n\tmed-iqr\n\tmean-stddev\n\ttmean-tstddev\n\tall\nthese output respectively the median and IQR,\nthe mean and standard deviation, the trimmed\nmean and trimmed (winsorized) standard deviation\nor all of the above.\n")
+	}
+	#check for missing values...
+	if(missing(pair)) {
+		usage()
+		pair <- 0
+	}
+	if(missing(trim)) { trim <- 0 ; cat("Warning:  Trim set to 0\n") }
+
+	#define case subfunctions
+	indexpair.mi <- function(x) {
+		cat("\nMedian: ",median(x),"\nInterquartile Range: ",r4arch.iqr(x),"\n")
+	}
+	indexpair.ms <- function(x) {
+		cat("\nMean: ",mean(x),"\nStandard Deviation: ",sd(x),"\n")
+	}
+	indexpair.tt <- function(x,trim) {
+		cat("\nWarning: R does not round trim factors.\nTrimmed Mean: ",mean(x,trim=trim),"\nTrimmed Standard Deviation: ",r4arch.winsor.sd(x,trim),"\n")
+	}
+	indexpair.all <- function(x,trim) {
+		indexpair.mi(x)
+		indexpair.ms(x)
+		indexpair.tt(x,trim)
+	}
+
+	#now, define cases
+	if(pair=="med-iqr") { indexpair.mi(x) }
+	else {
+	if(pair=="mean-stddev") { indexpair.ms(x) }
+	else {
+	if(pair=="tmean-tstddev") { indexpair.tt(x,trim) }
+	else {
+	if(pair=="all") { indexpair.all(x,trim) }
+	else {cat("Error:  Invalid pair designator\n")}
+	}}}
 }
