@@ -1,3 +1,9 @@
+Versioning:  each chapter gets a version, per below.  array R4ARCHVER is set to reflect version status:
+	VER:	the numeric version corresponding to a chapter.  All functions defined up to that chapter should work, but TODO items may not be finished.
+	ALPHA:	if TRUE, then VER chapter is 'work in progress,' and not all of the functions for that VER are working yet.  If FALSE, chapter is complete and tested, and all functions for that VER should work properly, but TODO items may hot be complete.
+	RC:	Below VER 1.0, RC=0.  At VER 1.0 and above, RC indicates 'release candidate' status.  If RC is numeric, ALPHA must be TRUE.  RC will be updated as testing continues and changes are made until everything listed under the chapter subsections works properly together, at which point RC=FALSE, and ALPHA=FALSE, this indicates 'final' version 1.0.  This system will be used after VER 1.0 as TODOs and other improvements are made, each improvement will increment the minor version, testing changes increment RC, RC=FALSE,ALPHA=FALSE denotes finished product for defined minor version increment.
+Minor versioning will increment after 1.0 in discrete packages of improvement, initally likely to follow the TODO list.  Ditto for post 2.0
+
 CHAPTER 1 (v0.04)
 Stem/Leaf plots
 	require aplpack
@@ -48,4 +54,6 @@ v1.0 alpha RC1...?
 packaged testing versions, fully functional
 v1.0
 fully functional, packaged, and tested
+v1.x incremental improvement
+v2.0 implements GUI
 
