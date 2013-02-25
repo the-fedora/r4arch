@@ -29,10 +29,10 @@ CHAPTER 3 (v0.12)
 		fix rounding behavior!
 CHAPTER 4 (v0.16)
 	r4arch.boxplot: boxplot from base makes a nice plot, but it lacks a feature to distinguish between median come outliers and far outliers... so we can add one.  First draft, we'll just kludge it in by making two plots on top of each other, one at default (1.5) range, one at range=3.
-	Removing Level and Spread: r4arch.boxplot.std
-	this function automates the process of removing level, and spread, ie standardizing
-		
-
+	Removing Level and Spread: r4arch.delevel & .std
+	.delevel will remove the level from a dataset by subtracting out the median
+	.std will standardize data by using scale() from base with the median and IQR
+	r4arch.zscore:  compute 'z scores' or standard scores, standardizing a batch based on mean and standard deviation in lieu of median and IQR
 CHAPTER 5 (v0.20)
 CHAPTER 6 (v0.24)
 CHAPTER 7 (v0.28)
