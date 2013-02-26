@@ -34,6 +34,8 @@ CHAPTER 4 (v0.16)
 	.std will standardize data by using scale() from base with the median and IQR
 	r4arch.zscore:  compute 'z scores' or standard scores, standardizing a batch based on mean and standard deviation in lieu of median and IQR
 CHAPTER 5 (v0.20)
+	symmetry, judgment, etc:
+	r4arch.stembox:  create graphics w/ stem & leaf, and standardized boxplots to aid initial evaluation of batches
 CHAPTER 6 (v0.24)
 CHAPTER 7 (v0.28)
 CHAPTER 8 (v0.32)
